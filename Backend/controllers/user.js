@@ -9,7 +9,7 @@ exports.signup = (req, res, next) => {
 
     // Validation de l'email
     if (!validator.isEmail(req.body.email)) {
-        return res.status(400).json({ message: 'Format d\'email invalide.' }); // Réponse en cas de format d'email invalide
+        return res.status(400).send ( new error('Format d\'email invalide.'));//json({ message: 'Format d\'email invalide.' }); // Réponse en cas de format d'email invalide
     }
 
     // Hachage du mot de passe avec bcrypt
